@@ -17,10 +17,11 @@ import plotly.figure_factory as ff
 # import data
 test = pd.read_csv('include/test.csv')
 train = pd.read_csv('include/train.csv')
-y = train['Survived']
 
 def preprocess_data(dataframe):
     # drop unneeded columns
+    dataframe.dropna(inplace=True)
+    survived = dataframe['Survived']
     dataframe.drop(dataframe.columns[[0, 1, 3, 8, 10, 11]], axis=1, inplace=True)
     # Get cabin letter
 #     cabins = ['A', 'B', 'C', 'D', 'E', 'F', 'T', 'G']
@@ -28,9 +29,8 @@ def preprocess_data(dataframe):
     enc = LabelEncoder()
 #     dataframe['Cabin'] = enc.fit_transform(dataframe['Cabin'])
     dataframe['Sex'] = enc.fit_transform(dataframe['Sex'])
-    dataframe['Sex'].fillna(0, inplace=True)
-    dataframe['Age'].fillna(0, inplace=True)
-    return dataframe
+
+    return dataframe, survived
 
 
 # taken from
@@ -42,21 +42,26 @@ def substrings_in_string(big_string, substrings):
     return np.nan
 
 
-train = preprocess_data(train)
+train, survived = preprocess_data(train)
+survived.reshape(-1, 1)
+train.drop('Sex', axis=1, inplace=True)
 train = StandardScaler().fit_transform(train);
+
 pca = PCA(n_components = 2)
 train_2d = pca.fit_transform(train)
-print(train_2d)
+train_2d = train_2d.reshape(-1, 2)
 
-
-# In[30]:
+print(train_2d.shape)
+print(survived.shape)
 traces = []
+names = ["Deceased", "Survived"]
 for name in (0, 1):
+
     trace = Scatter(
-        x=train_2d[y==name,0],
-        y=train_2d[y==name,1],
+        x=train_2d[survived==name,0],
+        y=train_2d[survived==name,1],
         mode='markers',
-        name=name,
+        name=names[name],
         marker=Marker(
             size=12,
             line=Line(
@@ -65,15 +70,11 @@ for name in (0, 1):
             opacity=0.8))
     traces.append(trace)
 
+
 data = Data(traces)
-layout = Layout(xaxis=XAxis(title='PC1', showline=False),
-                yaxis=YAxis(title='PC2', showline=False))
+layout = Layout(showlegend=True,
+                scene=Scene(xaxis=XAxis(title='PC1'),
+                yaxis=YAxis(title='PC2'),))
+
 fig = Figure(data=data, layout=layout)
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
+plotly.offline.iplot(fig)
