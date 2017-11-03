@@ -11,10 +11,10 @@ Prior to performing PCA, the data was normalized.
 These were my results, (1 - Survivors, 0 - Non Survivors)
 
 <p align="center">
-  Results by setting NaN fields to 0.
+  <h3>Results by setting NaN fields to 0.</h3>
   <img src="https://i.imgur.com/B1AAM9B.png" alt="Current"/>
 </p>
 <p align="center">
-  Dropping rows that contain NaN fields.
+  <h3>Dropping rows that contain NaN fields.</h3>
   <img src="https://i.imgur.com/GhERVSc.png" alt="Current"/>
 </p>
