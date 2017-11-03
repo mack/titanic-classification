@@ -18,3 +18,12 @@ These were my results, (1 - Survivors, 0 - Non Survivors)
   <h3>Dropping rows that contain NaN fields.</h3>
   <img src="https://i.imgur.com/GhERVSc.png" alt="Current"/>
 </p>
+
+## Random Forest Classifier
+Using a random forest classifier, I was able to achieve 96% accuracy on the test dataset with a 75/25 split. 
+
+## Nieve Bayes
+Will test soon...
+
+## Neural Network
+Will test soon...
