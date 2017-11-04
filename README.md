@@ -20,7 +20,10 @@ These were my results, (1 - Survivors, 0 - Non Survivors)
 </p>
 
 ## Random Forest Classifier
-Using a random forest classifier, I was able to achieve 96% accuracy on the test dataset with a 75/25 split. 
+Using a random forest classifier, I was able to achieve 96% accuracy on the train-split dataset with a 75/25 split. Sadly, I could only get between 0.70 - 0.75 on the test set. It could have been due to the way I preprocessed data and am handling missing values.
+
+## SVC
+With a support vector classifier, I was able to get a slight increase of +2% on my kaggle prediction at 77%. I trained it on the training set with NaN values set to their columns mean and the same columns were dropped, as described above. 
 
 ## Nieve Bayes
 Will test soon...
