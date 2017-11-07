@@ -1,12 +1,25 @@
 # TitanicClassification
 Classifying whether a passenger will survive on the titanic. This will be my first Kaggle submission.
 
-## Feature selection/Data Preprocessing
-I performed feature selection manually on columns that I felt wouldn't contribute to the final prediction, other than add unnecessary noise. These columns were name, ticket, cabin, and embarked.
+## Feature Extraction/Data Preprocessing
+In regards to data preprocessing, I selected several columns that I felt would provide meaningful data to our classification algorithm.
 
-To perform data preprocessing, I converted the sex label to a numerical label (although I believe this causes issues so I will change it to a onehot label)
+I selected the following features
+* Pclass
+* Sex
+* Age
+* Fare_Per_Person
+
+I then ran several classification algorithms (naive bayes, SVC, random forest), which I thought would perform well on a small dataset. The all gave varying results... ranging from 0.40 - 0.77 on the test sets accuracy.
+
+I believe that one issue that I'm running into is how to handle missing data. The only two approaches I've tried were setting NaN values to 0 or setting them to their columns mean. After further inspection, I realized that 20% of the test set contains NaN values so I believe that is where I'm running into problems.
+
+What is my solution? Well from researching online, I've found that I can use linear regression to predict the values of missing fields.
+
+
 
 ## Running PCA on the dataset
+<sub>Using almost all of the columns</sub>
 Prior to performing PCA, the data was normalized.
 These were my results, (1 - Survivors, 0 - Non Survivors)
 
@@ -18,6 +31,7 @@ These were my results, (1 - Survivors, 0 - Non Survivors)
   <h3>Dropping rows that contain NaN fields.</h3>
   <img src="https://i.imgur.com/GhERVSc.png" alt="Current"/>
 </p>
+
 
 ## Random Forest Classifier
 Attempt 1.
