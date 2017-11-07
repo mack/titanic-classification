@@ -29,8 +29,8 @@ Tried with more features and received worse results.
 ## SVC
 With a support vector classifier, I was able to get a slight increase of +2% on my kaggle prediction at 77%. I trained it on the training set with NaN values set to their columns mean and the same columns were dropped, as described above.
 
-## Nieve Bayes
-Will test soon...
+## Naive Bayes
+Tested with bernoulli naive bayes and the results were around 76% on kaggle so I achieved about the same.
 
 ## Neural Network
 Will test soon...
