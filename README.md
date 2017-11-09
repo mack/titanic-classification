@@ -13,6 +13,9 @@ What is my solution? Well from researching online, I've found that I can use lin
 After testing with KNN to impute missing values on the test set, I was able to achieve... a whopping 74%! -3% than my best score... I guess I'll keep on trying.
 
 #### Nov 8th
+After exhaustively testing various machine learning algorithms with the currently formatted data that I have, my highest score that I was able to achieve was ~77% from the SVC classifier.
+
+Therefore, I am going to try to experiment with that further by tweaking the hyper parameters and try to push to a higher score.
 
 
 
