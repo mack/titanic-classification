@@ -57,5 +57,8 @@ With a support vector classifier, I was able to get a slight increase of +2% on 
 ## Naive Bayes
 Tested with bernoulli naive bayes and the results were around 76% on kaggle so I achieved about the same as the random forest classifier/SVC.
 
+## KNN
+With nearest neighbors set to 5, I received poor results at ~40%.
+
 ## Perceptron (NN)
 As I had expected, the results achieved from the NN were significantly worse than the alternative solutions. From my understanding, I believe this is from the lack of data and that it's not linearly separable.
