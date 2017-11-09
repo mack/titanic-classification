@@ -12,8 +12,8 @@ What is my solution? Well from researching online, I've found that I can use lin
 
 After testing with KNN to impute missing values on the test set, I was able to achieve... a whopping 74%! -3% than my best score... I guess I'll keep on trying.
 
-### Nov 7th
-... will update
+#### Nov 8th
+
 
 
 ## Feature Extraction/Data Preprocessing
@@ -48,11 +48,14 @@ Using a random forest classifier, I was able to achieve 96% accuracy on the trai
 Attempt 2.
 Tried with more features and received worse results.
 
+## Decision Trees
+As expected, this performed significantly worse than the random forest classifier. I ended up with results are ~62%.
+
 ## SVC
 With a support vector classifier, I was able to get a slight increase of +2% on my kaggle prediction at 77%. I trained it on the training set with NaN values set to their columns mean and the same columns were dropped, as described above.
 
 ## Naive Bayes
-Tested with bernoulli naive bayes and the results were around 76% on kaggle so I achieved about the same.
+Tested with bernoulli naive bayes and the results were around 76% on kaggle so I achieved about the same as the random forest classifier/SVC.
 
-## Neural Network
-Will test soon...
+## Perceptron (NN)
+As I had expected, the results achieved from the NN were significantly worse than the alternative solutions. From my understanding, I believe this is from the lack of data and that it's not linearly separable.
