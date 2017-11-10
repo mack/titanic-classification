@@ -17,6 +17,9 @@ After exhaustively testing various machine learning algorithms with the currentl
 
 Therefore, I am going to try to experiment with that further by tweaking the hyper parameters and try to push to a higher score.
 
+#### Nov 9th
+After experimenting with setting various hyper parameters, I was not able able to get anything higher than my 77%. I finally caved in and looked up a solution. Following [this tutorial](https://www.kaggle.com/startupsci/titanic-data-science-solutions) I realized the importance of understanding the data I'm working with. They gave a much more in depth analysis of the data before using any sort of machine learning models. Despsite following the tutorial, I was only able to get to a 78% on kaggle. 
+
 
 
 ## Feature Extraction/Data Preprocessing
